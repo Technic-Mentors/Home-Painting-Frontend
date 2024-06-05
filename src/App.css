@@ -1,38 +1,304 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #0047AB;
+  --secondary-color: #00796B;
+  --tertiary-color: rgba(0, 121, 107, .95);
+  --tertiary1-color: rgba(0, 121, 107, .6);
+  --yellowish-color: #FFD700;
+  --grayish-color: #F5F5F5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body,
+html {
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li {
+  list-style: none;
+  line-height: 2.3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card {
+  height: 100%;
+}
+
+i {
+  color: var(--yellowish-color);
+}
+
+.py-6 {
+  padding: 120px 0;
+}
+
+h1 {
+  color: var(--yellowish-color);
+}
+
+.nav-bg {
+  background-color: var(--grayish-color);
+}
+
+
+.mainHeader-bg {
+  background-image: url(./img/main-header-bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mainHeader-bg1 {
+  background-image: url(./img/main-header-bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.mainHeader-overlay {
+  background-color: var(--tertiary-color);
+}
+
+.about-head h5 {
+  background-color: var(--yellowish-color);
+  display: inline-block;
+  padding: 5px;
+}
+
+.choseUs-bg {
+  background-color: var(--secondary-color);
+}
+
+.choseUs-bg p {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.chose-col-bg {
+  background-image: url(./img/chose-col-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotateX(90);
+  height: 700px;
+  z-index: 3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer-heading {
+  position: relative;
+}
+
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 35%;
+  background-color: var(--secondary-color);
+  bottom: -4px;
+  left: 2px;
+}
+
+.footer-bg {
+  background-color: var(--grayish-color);
+}
+
+.pseduoCardRow .card {
+  position: relative;
+}
+
+.pseduoCardRow .card::after,
+.pseduoCardRow .card::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background-color: var(--secondary-color);
+  transition: width 0.8s ease;
+}
+
+.pseduoCardRow .card-body:hover {
+  z-index: 3;
+  color: white;
+}
+
+.pseduoCardRow .card:hover::after {
+  top: 0;
+  right: 0;
+  width: 50%;
+}
+
+.pseduoCardRow .card:hover::before {
+  top: 0;
+  left: 0;
+  width: 50%;
+}
+
+@keyframes iconRotation {
+  0% {
+    transform: rotatey(0);
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    transform: rotatey(360deg);
   }
+}
+
+.keyFeatures i {
+  font-size: 30px;
+  background-color: var(--secondary-color);
+  padding: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  animation: iconRotation 10s ease 6s infinite;
+}
+
+.all-header-bg {
+  background-image: url(./img/villa-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.all-header-overlay {
+  background-color: var(--tertiary1-color);
+}
+
+.benefits-work-bg {
+  background-color: var(--secondary-color);
+}
+
+.benefits-section {
+  position: relative;
+}
+
+.benefits-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--yellowish-color);
+}
+
+/* slick slider start */
+.slick-center {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.slick-center h3,
+.slick-center h6 {
+  color: var(--yellowish-color);
+}
+
+/* slick slider end */
+
+.pseduoCardRow .card {
+  border-left: 2px solid var(--secondary-color);
+  border-right: 2px solid var(--secondary-color);
+  position: relative;
+}
+
+.benefits-work-bg .card {
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 0 7px rgba(245, 245, 245, .6);
+}
+
+.benefits-work-bg .card h3 {
+  color: var(--yellowish-color);
+}
+
+.benefits-work-bg .card p {
+  color: var(--grayish-color);
+}
+
+.benefits-work-bg .card:hover {
+  background-color: var(--yellowish-color);
+  transition: 2s ease;
+}
+
+.benefits-work-bg .card:hover h3 {
+  color: var(--grayish-color);
+  transition: 2s ease;
+}
+
+.callToActionBg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact-icon {
+  font-size: 30px;
+  background-color: var(--secondary-color);
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  border: 1px solid var(--secondary-color);
+}
+
+.nav-link {
+  color: rgb(53, 53, 53) !important;
+}
+
+.social-links i {
+  font-size: 25px;
+  background-color: var(--secondary-color);
+  padding: 5px;
+}
+
+.social-links i:hover {
+  font-size: 25px;
+  background-color: var(--yellowish-color);
+  color: var(--secondary-color);
+  transition: 0.5s ease;
+  padding: 5px;
+}
+
+.footer-bottom {
+  background-color: var(--secondary-color);
+}
+
+.footer-bottom p {
+  padding: 20px 0;
+}
+
+.whatsappIcon {
+  position: fixed;
+  width: 110px;
+  bottom: 0;
+  right: 1%;
+  z-index: 100;
+}
+.callIcon {
+  position: fixed;
+  width: 60px;
+  bottom: 1%;
+  left: 1%;
+  background-color: white;
+  padding: 2px;
+  border-radius: 100%;
+  z-index: 100;
+}
+
+.servicesCard .card:hover li {
+  color: white;
+}
+.servicesCard .card li {
+  color: initial;
+}
+
+.servicesCard .card {
+  -webkit-border-radius: 0px;
+  border: none;
+  border-radius: 0px;
+  background: #ffffff;
+  -webkit-box-shadow: 5px 5px 31px #ebebeb, -5px -5px 31px #ffffff;
+  box-shadow: 5px 5px 31px #ebebeb, -5px -5px 31px #ffffff;
+}
+
+.servicesCard .card:hover {
+  border-radius: 0px;
+  background: #00796b;
+  box-shadow: inset 5px 5px 13px #00302b,
+    inset -5px -5px 13px #00c2ab;
 }
